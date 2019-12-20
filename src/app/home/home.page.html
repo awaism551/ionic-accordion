@@ -10,10 +10,7 @@
 
 	<app-mi-accordion
 		*ngFor="let technology of technologies"
-		name="{{ technology.name }}"
-		description="{{ technology.description }}"
-		image="{{ technology.image }}"
-		status="{{ technology.isOpen }}"
+		[technology]="technology"
 		(change)="captureName($event)">
 	</app-mi-accordion>
 

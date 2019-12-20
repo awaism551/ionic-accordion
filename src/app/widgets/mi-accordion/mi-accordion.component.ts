@@ -22,8 +22,8 @@ export class MiAccordionComponent implements OnInit {
 	 * @property name
 	 * @type {string}
 	 */
-	@Input()
-	name: string;
+	// @Input()
+	// name: string;
 
 
 	/**
@@ -33,11 +33,11 @@ export class MiAccordionComponent implements OnInit {
 	 * @property description
 	 * @type {string}
 	 */
-	@Input()
-	description: string;
+	// @Input()
+	// description: string;
 
-	@Input()
-	status: boolean;
+	// @Input()
+	// status: boolean;
 
 
 	/**
@@ -47,8 +47,11 @@ export class MiAccordionComponent implements OnInit {
 	 * @property image
 	 * @type {string}
 	 */
+	// @Input()
+	// image: string;
+
 	@Input()
-	image: string;
+	technology: any;
 
 
 	/**
@@ -68,7 +71,7 @@ export class MiAccordionComponent implements OnInit {
 	 * @property isMenuOpen
 	 * @type {boolean}
 	 */
-	public isMenuOpen : boolean = false;
+	// public isMenuOpen : boolean = false;
 
 	constructor() { }
 
@@ -80,11 +83,11 @@ export class MiAccordionComponent implements OnInit {
 	 * @method toggleAccordion
 	 * @returns {none}
 	 */
-	public toggleAccordion(status): void {
-		debugger;
-		console.log(status);
-		this.isMenuOpen = status === 'true' ? false : true;
-	}
+	// public toggleAccordion(status): void {
+	// 	debugger;
+	// 	console.log(status);
+	// 	this.isMenuOpen = status === 'true' ? false : true;
+	// }
 
 
 	/**

@@ -1,14 +1,14 @@
-<h2 (click)="toggleAccordion(status); broadcastName(name)">
-  {{ name }}
-   <span *ngIf="isMenuOpen">&#9650;</span> <!-- up -->
-   <span *ngIf="!isMenuOpen">&#9660;</span> <!-- down -->
+<h2 (click)="broadcastName(technology.name)">
+  {{ technology.name }}
+   <span *ngIf="technology.isOpen">&#9650;</span> <!-- up -->
+   <span *ngIf="!technology.isOpen">&#9660;</span> <!-- down -->
 </h2>
 <div
-   [ngClass]="isMenuOpen ? 'active' : 'inactive'">
+   [ngClass]="technology.isOpen ? 'active' : 'inactive'">
    <section class="image-wrapper">
-   	  <img [src]="image">
+   	  <img [src]="technology.image">
    </section>
-   <p>{{ description }}</p>
+   <p>{{ technology.description }}</p>
    <ion-button
 		type="button"
 		color="primary"
