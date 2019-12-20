@@ -14,21 +14,24 @@ export class HomePage {
  * @property technologies
  * @type {Array}
  */
-public technologies : Array<{ name: string, description: string, image: string }> = [
+public technologies : any = [
     {
        name : 'Angular',
        description : 'Google\'s front-end development framework - default option for Ionic development',
-       image: '/assets/images/angular-logo.png'
+	   image: '/assets/images/angular-logo.png',
+	   isOpen: false
     },
     {
        name : 'VueJS',
        description : 'Latest cutting edge front-end development framework - can be enabled as an option for Ionic development',
-       image: '/assets/images/vuejs-logo.png'
+       image: '/assets/images/vuejs-logo.png',
+	   isOpen: false
     },
     {
        name : 'React',
        description : 'Popular front-end development framework from Facebook- can be enabled as an option for Ionic development',
-       image: 'assets/images/react-logo.png'
+       image: 'assets/images/react-logo.png',
+	   isOpen: false
     }
 ];
 
@@ -42,9 +45,21 @@ public technologies : Array<{ name: string, description: string, image: string }
 	 * @param {any}		event 				The captured event
 	 * @returns {none}
 	 */
-	public captureName(event: any) : void
+	public captureName(name: any) : void
 	{
-		console.log(`Captured name by event value: ${event}`);
+		debugger;
+		console.log(`Captured name by event value: ${name}`);
+		this.technologies.forEach(myFunction);
+
+		function myFunction(obj) {
+			if (obj.name === name) {
+				obj.isOpen = !obj.isOpen;
+			} else {
+				obj.isOpen = false;
+			}
+		}
+		debugger;
+		console.log(this.technologies);
 	}
 
 }

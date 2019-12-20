@@ -1,10 +1,10 @@
-<h2 (click)="toggleAccordion()">
+<h2 (click)="toggleAccordion(status); broadcastName(name)">
   {{ name }}
-   <span *ngIf="isMenuOpen">&#9650;</span>
-   <span *ngIf="!isMenuOpen">&#9660;</span>
+   <span *ngIf="isMenuOpen">&#9650;</span> <!-- up -->
+   <span *ngIf="!isMenuOpen">&#9660;</span> <!-- down -->
 </h2>
 <div
-   [ngClass]="this.isMenuOpen ? 'active' : 'inactive'">
+   [ngClass]="isMenuOpen ? 'active' : 'inactive'">
    <section class="image-wrapper">
    	  <img [src]="image">
    </section>
@@ -14,6 +14,6 @@
 		color="primary"
 		fill="solid"
 		size="default"
-		(click)="broadcastName(name)">Console log me!
+	>Console log me!
 	</ion-button>
 </div>

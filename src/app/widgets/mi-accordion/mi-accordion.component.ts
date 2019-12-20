@@ -36,6 +36,9 @@ export class MiAccordionComponent implements OnInit {
 	@Input()
 	description: string;
 
+	@Input()
+	status: boolean;
+
 
 	/**
 	 * The official logo identifying the technology that will be displayed within the accordion body (when activated
@@ -65,7 +68,7 @@ export class MiAccordionComponent implements OnInit {
 	 * @property isMenuOpen
 	 * @type {boolean}
 	 */
-	public isMenuOpen = false;
+	public isMenuOpen : boolean = false;
 
 	constructor() { }
 
@@ -77,8 +80,10 @@ export class MiAccordionComponent implements OnInit {
 	 * @method toggleAccordion
 	 * @returns {none}
 	 */
-	public toggleAccordion(): void {
-		this.isMenuOpen = !this.isMenuOpen;
+	public toggleAccordion(status): void {
+		debugger;
+		console.log(status);
+		this.isMenuOpen = status === 'true' ? false : true;
 	}
 
 

@@ -6,14 +6,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
 	<app-mi-accordion
 		*ngFor="let technology of technologies"
 		name="{{ technology.name }}"
 		description="{{ technology.description }}"
 		image="{{ technology.image }}"
+		status="{{ technology.isOpen }}"
 		(change)="captureName($event)">
 	</app-mi-accordion>
 
 </ion-content>
+
